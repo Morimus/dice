@@ -9,21 +9,24 @@ class dice
 
       while(!quit) 
       {
+         System.out.print("Guess the sum of two dicerolls: ");
+
+         // Get input from user
          Scanner input = new Scanner(System.in);
-         System.out.print("Guess the sum for two dicerolls: ");
          while(!input.hasNextInt())
          {
             System.out.println("Please make sure your guess is an integer.");
             input.next();
          }
-
          int sum = input.nextInt();
 
+         // Roll dice & get sum
          Random roller = new Random();
          int d1 = roller.nextInt(6) + 1;
          int d2 = roller.nextInt(6) + 1;
          int dSum = d1+d2;
 
+         // Inform user
          System.out.println();
          System.out.println("----------");
          System.out.println("Roll 1: " + d1);
@@ -46,6 +49,7 @@ class dice
          System.out.println("----------");
          System.out.println();
 
+         // Ask for another round
          System.out.print("Do you to continue? (y/n): ");
          Scanner answer = new Scanner(System.in);
 
